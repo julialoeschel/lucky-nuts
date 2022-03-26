@@ -1,5 +1,6 @@
+import QuoteNut from "./Components/QuotesNut";
 function App() {
-  return <div>Tets</div>;
+  return <QuoteNut></QuoteNut>;
 }
 
 export default App;
