@@ -35,7 +35,7 @@ const Img = styled.img`
 `;
 
 const Quote = styled.p`
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Special Elite", cursive;
   font-size: 25px;
   text-align: center;
   padding: 20px;
