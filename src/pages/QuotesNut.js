@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { data } from "../data";
 import nut from "../nut.png";
-import Button from "./Button";
+import Button from "../Components/Button";
 import styled from "styled-components";
 
 export default function QuoteNut() {
@@ -13,12 +13,17 @@ export default function QuoteNut() {
     setRandomNumber(randomNumber);
   }
 
+  const userName = localStorage.getItem("userName");
+
   return (
-    <Container>
-      <Img src={nut} alt="nut of wisdom" width={200} />
-      <Button onClick={handleClick}>next</Button>
-      <Quote>{data[randomNumber].quote}</Quote>
-    </Container>
+    <>
+      <Heading>Moin {userName} !</Heading>
+      <Container>
+        <Img src={nut} alt="nut of wisdom" width={200} />
+        <Button onClick={handleClick}>next</Button>
+        <Quote>{data[randomNumber].quote}</Quote>
+      </Container>
+    </>
   );
 }
 
@@ -39,4 +44,11 @@ const Quote = styled.p`
   font-size: 25px;
   text-align: center;
   padding: 20px;
+`;
+
+const Heading = styled.h2`
+  font-family: "Special Elite", cursive;
+  color: #cf8d53;
+  text-align: center;
+  font-size: 40px;
 `;
