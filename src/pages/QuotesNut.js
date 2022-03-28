@@ -18,7 +18,7 @@ export default function QuoteNut() {
   return (
     <>
       <Heading>Moin {userName} !</Heading>
-      <span>this is a test</span>
+
       <Container>
         <Img src={nut} alt="nut of wisdom" width={200} />
         <Button onClick={handleClick}>next</Button>
