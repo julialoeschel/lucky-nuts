@@ -3,9 +3,12 @@ import { data } from "../data";
 import nut from "../nut.png";
 import Button from "../Components/Button";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import RoundButton from "../Components/RoundButton";
 
 export default function QuoteNut() {
   const [randomNumber, setRandomNumber] = useState(0);
+  let navigate = useNavigate();
 
   function handleClick() {
     const length = data.length;
@@ -13,11 +16,19 @@ export default function QuoteNut() {
     setRandomNumber(randomNumber);
   }
 
+  function handleEditClick(event) {
+    event.preventDefault();
+    navigate("/login");
+  }
+
   const userName = localStorage.getItem("userName");
 
   return (
     <>
-      <Heading>Moin {userName} !</Heading>
+      <Heading>
+        Moin {userName} !
+        <RoundButton onClick={handleEditClick}>&#9998;</RoundButton>
+      </Heading>
 
       <Container>
         <Img src={nut} alt="nut of wisdom" width={200} />
@@ -52,4 +63,6 @@ const Heading = styled.h2`
   color: #cf8d53;
   text-align: center;
   font-size: 40px;
+  position: relative;
+  padding: 50px 0;
 `;

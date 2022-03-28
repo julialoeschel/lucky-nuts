@@ -1,10 +1,20 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
+import RoundButton from "../Components/RoundButton";
 
 export default function Login() {
+  let navigate = useNavigate();
+
+  function handleBackClick(event) {
+    event.preventDefault();
+    navigate("/quotes");
+  }
+
   return (
     <>
       <Form>
+        <RoundButton onClick={handleBackClick}>✗</RoundButton>
         <h2>Login</h2>
         <label htmlFor="username">
           Username
