@@ -11,18 +11,25 @@ export default function Login() {
     navigate("/quotes");
   }
 
+  function login(event) {
+    event.preventDefault();
+    const name = event.target.elements.name.value;
+    const password = event.target.elements.password.value;
+    console.log(name, password);
+  }
+
   return (
     <>
-      <Form>
+      <Form onSubmit={login}>
         <RoundButton onClick={handleBackClick}>✗</RoundButton>
         <h2>Login</h2>
         <label htmlFor="username">
           Username
-          <input type="text" id="username" name="name" />
+          <input type="text" id="username" name="name" autoComplete="off" />
         </label>
         <label htmlFor="passwprd">
           Password
-          <input type="text" id="password" name="password" />
+          <input type="text" id="password" name="password" autoComplete="off" />
         </label>
         <Button>log me in!</Button>
       </Form>
@@ -42,7 +49,6 @@ const Form = styled.form`
   }
 
   label {
-    align-item: end;
     align-self: center;
   }
 
