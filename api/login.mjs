@@ -1,5 +1,6 @@
 import User from "../models/User.mjs";
 import dbConnect from "../lib/dbConnect.mjs";
+import bcrypt from "bcrypt";
 
 await dbConnect();
 console.log("connected to db");
@@ -21,7 +22,7 @@ export default async function handler(request, response) {
     return response.status(401).json("user not found");
   }
 
-  const isMatch = password === foundUser.password;
+  const isMatch = await bcrypt.compare(password, foundUser.password);
 
   if (!isMatch) {
     return response.status(401).json("password is wrong");

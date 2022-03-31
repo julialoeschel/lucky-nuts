@@ -9,4 +9,11 @@ In the project directory, you can run:
 
 <!--
 Quick Userstorys in Excalidraw
-https://excalidraw.com/#json=TLEC-f2bWNVfH-pfbmcD6,UxNUBVO9uGoXU9MAl_0kqw -->
+https://excalidraw.com/#json=TLEC-f2bWNVfH-pfbmcD6,UxNUBVO9uGoXU9MAl_0kqw
+
+npm run start starts vercel server & node
+
+next:
+- hashing des Passwortes
+
+-->
