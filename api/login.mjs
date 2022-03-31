@@ -2,6 +2,8 @@ import User from "../models/User.mjs";
 import dbConnect from "../lib/dbConnect.mjs";
 import bcrypt from "bcrypt";
 
+import { createToken } from "../lib/services/jwt-service.mjs";
+
 await dbConnect();
 console.log("connected to db");
 
@@ -28,5 +30,7 @@ export default async function handler(request, response) {
     return response.status(401).json("password is wrong");
   }
 
-  response.status(200).json("toller token kommt hier");
+  const token = createToken(foundUser._id);
+
+  response.status(200).json(token);
 }
