@@ -2,7 +2,7 @@ import QuoteNut from "./pages/QuotesNut";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
-import AllQuotes from "./pages/AllQuotes";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Route path="/" element={<Welcome />} />
       <Route path="/quotes" element={<QuoteNut />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/all" element={<AllQuotes />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
